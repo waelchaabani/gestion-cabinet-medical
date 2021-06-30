@@ -1,0 +1,67 @@
+<div class="ms-content-wrapper">
+    <div class="row">
+       <div class="col-md-12">
+          <nav aria-label="breadcrumb">
+             <ol class="breadcrumb pl-0">
+                <li class="breadcrumb-item"><a href="#"><i class="material-icons">home</i> Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Payment</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Add payment</li>
+             </ol>
+          </nav>
+       </div>
+       <div class="col-xl-12 col-md-12">
+          <div class="ms-panel">
+             <div class="ms-panel-header ms-panel-custome">
+                <h6>Add Payment</h6>
+                <a href="payment-list.html" class="ms-text-primary">Payment List</a>
+             </div>
+             <div class="ms-panel-body">
+                <form class="needs-validation" novalidate>
+                   <div class="form-row">
+                      <div class="col-md-6 mb-3">
+                         <label for="validationCustom001"> account name</label>
+                         <div class="input-group">
+                            <input type="text" name="accountname" class="form-control"  [(ngModel)]="payment.accountname" placeholder="Enter account Name"  required>
+
+                         </div>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                         <label for="validationCustom002">Description</label>
+                         <div class="input-group">
+                            <input type="text" name="description" class="form-control" [(ngModel)]="payment.description" placeholder="description"  required>
+
+                         </div>
+                      </div>
+                   </div>
+                   <div class="form-row">
+                      <div class="col-md-6 mb-2">
+                         <label for="validationCustom004">type</label>
+                         <div class="input-group">
+                            <input type="text" name="type" class="form-control" [(ngModel)]="payment.type"  placeholder="type"  required>
+
+                         </div>
+                      </div>
+                      <div class="col-md-6 mb-2">
+                         <label for="validationCustom005">datepayment</label>
+                         <div class="input-group">
+                            <input type="date" name="datepayment" class="form-control" [(ngModel)]="payment.datepayment"  placeholder="Enter Total Amount"  required>
+
+                         </div>
+                      </div>
+                      <div class="col-md-6 mb-2">
+                        <label for="validationCustom005">amount</label>
+                        <div class="input-group">
+                           <input type="number" name="amount" class="form-control" [(ngModel)]="payment.amount"  placeholder="amount"  required>
+
+                        </div>
+                     </div>
+                   </div>
+                  
+                   
+                   <button (click)="addPayment()" class="btn btn-primary mt-4 d-inline w-20" type="submit">Submit</button>
+                </form>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>

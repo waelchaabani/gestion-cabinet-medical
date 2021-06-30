@@ -1,0 +1,432 @@
+<div class="ms-content-wrapper">
+    <div class="row">
+      <div class="col-md-12">
+        <nav aria-label="breadcrumb" class="ms-panel-custome">
+          <ol class="breadcrumb pl-0">
+            <li class="breadcrumb-item"><a href="#"><i class="material-icons">home</i> Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Doctor</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Doctor-List</li>
+          </ol>
+
+        </nav>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-6" *ngFor="let item of medecin">
+        <div class="ms-card">
+          <div class="ms-card-body">
+            <div class="media fs-14">
+              <div class="mr-2 align-self-center">
+                <img src="../../assets/assets/img/dashboard/doctor-1.jpg" class="ms-img-round" alt="people">
+              </div>
+              <div class="media-body" >
+                <h6>{{item.firstname}}</h6>
+                <div class="dropdown float-right">
+                  <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="material-icons">more_vert</i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-right">
+                    <li class="ms-dropdown-list">
+                      <a class="media p-2" href="#">
+                        <div class="media-body">
+                          <span>View Details</span>
+                        </div>
+                      </a>
+                      
+                      <div class="media p-2" href="#" >
+                            <a href="#"  data-toggle="dropdown" aria-expanded="false"></a>
+                                <a class="dropdown-item" [routerLink]="['/home/editmedecin',item._id]"> Edit</a>
+
+                      </div>
+                      <div class="media p-2" href="#" >
+                        
+                            <a href="#"  data-toggle="dropdown" aria-expanded="false"></a>
+                                <a class="dropdown-item" (click)="selectUser(item._id)" data-toggle="modal" data-target="#delete_doctor"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+                      </div>
+                        <div class="doctor-profile">
+                        <div class="odd gradeX"
+                                >
+                        
+                                <img src="../assets/tem/assets/img/user/user10.jpg" class="doctor-pic" alt=""> 
+                            <div class="profile-usertitle">
+                                <div class="doctor-name">{{item.firstname}} </div>
+                            </div>
+                                <p>A-103, shyam gokul flats, Mahatma Road <br />Mumbai</p> 
+                                <div><p><i class="fa fa-phone"></i><a href="tel:(123)456-7890">  (123)456-7890</a></p> </div>
+                            <div class="profile-userbuttons">
+                                <a href="patient_profile.html" class="btn btn-circle deepPink-bgcolor btn-sm">Read More</a>
+                            </div>
+                        
+                    </div>
+                </div>
+                    </li>
+                  </ul>
+                </div>
+                <div id="delete_doctor" class="modal fade delete-modal" role="dialog">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-body text-center">
+                                <img src="assets/images/sent.png" alt="" width="50" height="46">
+                                <h3>Are you sure want to delete this Doctor?</h3>
+                                <div class="m-t-20"> <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
+                                    <button (click)="removeMedecin()" class="btn btn-danger">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="fs-12 my-1 text-disabled">{{item.speciality}}</p>
+                <h6 class="mt-2">
+                  <span class="fs-14">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </span>
+                   {{item.address}}</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Chat Widget (Active Chats) -->
+      <div class="col-xl-7 col-md-12">
+        <div class="ms-panel ms-widget ">
+          <div class="ms-panel-body py-3 px-0">
+            <div class="ms-chat-container">
+              <div class="ms-chat-header px-3">
+                <div class="ms-chat-user-container media clearfix">
+                  <div class="ms-chat-status ms-status-online ms-chat-img mr-3 align-self-center">
+                    <img src="../../assets/assets/img/dashboard/doctor-1.jpg" class="ms-img-round" alt="people">
+                  </div>
+                  <div class="media-body ms-chat-user-info mt-1">
+                    <h6>Anny Farisha</h6>
+                    <a href="#" class="text-disabled has-chevron fs-12" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Available
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li class="ms-dropdown-list">
+                        <a class="media p-2" href="#">
+                          <div class="media-body">
+                            <span>Busy</span>
+                          </div>
+                        </a>
+                        <a class="media p-2" href="#">
+                          <div class="media-body">
+                            <span>Away</span>
+                          </div>
+                        </a>
+                        <a class="media p-2" href="#">
+                          <div class="media-body">
+                            <span>Offline</span>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <form class="ms-form my-3" method="post">
+                  <div class="ms-form-group my-0 mb-0 has-icon fs-14">
+                    <input type="search" class="ms-form-input w-100" name="search" placeholder="Search for People and Groups" value="">
+                    <i class="flaticon-search text-disabled"></i>
+                  </div>
+                </form>
+              </div>
+              <div class="ms-chat-body">
+                <ul class="nav nav-tabs tabs-bordered d-flex nav-justified px-3" role="tablist">
+                  <li role="presentation" class="fs-12"><a href="#chats-2" class="active show" role="tab" data-toggle="tab"> Chats </a></li>
+                  <li role="presentation" class="fs-12"><a href="#groups-2" role="tab" data-toggle="tab"> Groups </a></li>
+                  <li role="presentation" class="fs-12"><a href="#contacts-2" role="tab" data-toggle="tab"> Contacts </a></li>
+                </ul>
+                <div class="tab-content">
+                  <div role="tabpanel" class="tab-pane active show fade in" id="chats-2">
+                    <ul class="ms-scrollable">
+                      <li class="ms-chat-user-container ms-open-chat ms-deletable p-3 media clearfix">
+                        <div class="ms-chat-status ms-status-away ms-has-new-msg ms-chat-img mr-3 align-self-center">
+                          <span class="msg-count">3</span>
+                          <img src="../../assets/assets/img/dashboard/doctor-2.jpg" class="ms-img-round" alt="people">
+                        </div>
+                        <div class="media-body ms-chat-user-info mt-1">
+                          <h6>John Doe</h6>
+                          <span class="ms-chat-time">2 Hours ago</span>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in arcu turpis. Nunc</p>
+                          <a href="#" class="ms-hoverable-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">more_vert</i>
+                          </a>
+                          <ul class="dropdown-menu dropdown-menu-right">
+                            <li class="ms-dropdown-list">
+                              <a class="media p-2" href="#">
+                                <div class="media-body">
+                                  <span>Archive</span>
+                                </div>
+                              </a>
+                              <a class="media p-2" href="#">
+                                <div class="media-body">
+                                  <span>Pin</span>
+                                </div>
+                              </a>
+                              <a class="media p-2" href="#">
+                                <div class="media-body">
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="ms-chat-user-container ms-open-chat ms-deletable p-3 media clearfix">
+                        <div class="ms-chat-status ms-status-online ms-chat-img mr-3 align-self-center">
+                          <img src="../../assets/assets/img/dashboard/doctor-3.jpg" class="ms-img-round" alt="people">
+                        </div>
+                        <div class="media-body ms-chat-user-info mt-1">
+                          <h6>John Doe</h6>
+                          <span class="ms-chat-time">3 Days ago</span>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in arcu turpis. Nunc</p>
+                          <a href="#" class="ms-hoverable-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">more_vert</i>
+                          </a>
+                          <ul class="dropdown-menu dropdown-menu-right">
+                            <li class="ms-dropdown-list">
+                              <a class="media p-2" href="#">
+                                <div class="media-body">
+                                  <span>Archive</span>
+                                </div>
+                              </a>
+                              <a class="media p-2" href="#">
+                                <div class="media-body">
+                                  <span>Pin</span>
+                                </div>
+                              </a>
+                              <a class="media p-2" href="#">
+                                <div class="media-body">
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="ms-chat-user-container ms-open-chat ms-deletable p-3 media clearfix">
+                        <div class="ms-chat-status ms-status-online ms-chat-img mr-3 align-self-center">
+                          <img src="../../assets/assets/img/dashboard/doctor-4.jpg" class="ms-img-round" alt="people">
+                        </div>
+                        <div class="media-body ms-chat-user-info mt-1">
+                          <h6>John Doe</h6>
+                          <span class="ms-chat-time">3 Days ago</span>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in arcu turpis. Nunc</p>
+                          <a href="#" class="ms-hoverable-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">more_vert</i>
+                          </a>
+                          <ul class="dropdown-menu dropdown-menu-right">
+                            <li class="ms-dropdown-list">
+                              <a class="media p-2" href="#">
+                                <div class="media-body">
+                                  <span>Archive</span>
+                                </div>
+                              </a>
+                              <a class="media p-2" href="#">
+                                <div class="media-body">
+                                  <span>Pin</span>
+                                </div>
+                              </a>
+                              <a class="media p-2" href="#">
+                                <div class="media-body">
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="ms-chat-user-container ms-open-chat ms-deletable p-3 media clearfix">
+                        <div class="ms-chat-status ms-status-online ms-chat-img mr-3 align-self-center">
+                          <img src="../../assets/assets/img/dashboard/doctor-5.jpg" class="ms-img-round" alt="people">
+                        </div>
+                        <div class="media-body ms-chat-user-info mt-1">
+                          <h6>John Doe</h6>
+                          <span class="ms-chat-time">3 Days ago</span>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in arcu turpis. Nunc</p>
+                          <a href="#" class="ms-hoverable-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">more_vert</i>
+                          </a>
+                          <ul class="dropdown-menu dropdown-menu-right">
+                            <li class="ms-dropdown-list">
+                              <a class="media p-2" href="#">
+                                <div class="media-body">
+                                  <span>Archive</span>
+                                </div>
+                              </a>
+                              <a class="media p-2" href="#">
+                                <div class="media-body">
+                                  <span>Pin</span>
+                                </div>
+                              </a>
+                              <a class="media p-2" href="#">
+                                <div class="media-body">
+                                  <span>Delete</span>
+                                </div>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div role="tabpanel" class="tab-pane fade" id="groups-2">
+                    <ul class="ms-scrollable">
+                      <li class="ms-chat-user-container ms-open-chat p-3 media clearfix">
+                        <div class="ms-chat-img mr-3 align-self-center">
+                          <img src="../../assets/assets/img/dashboard/doctor-1.jpg" class="ms-img-round" alt="people">
+                        </div>
+                        <div class="media-body ms-chat-user-info mt-1">
+                          <h6>John Doe</h6>
+                          <a href="#" class="ms-chat-time"> <i class="flaticon-chat"></i> </a>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in arcu turpis. Nunc</p>
+                          <ul class="ms-group-members clearfix mt-3 mb-0">
+                            <li> <img src="../../assets/assets/img/dashboard/doctor-1.jpg" alt="member"> </li>
+                            <li> <img src="../../assets/assets/img/dashboard/doctor-1.jpg" alt="member"> </li>
+                            <li> <img src="../../assets/assets/img/dashboard/doctor-1.jpg" alt="member"> </li>
+                            <li class="ms-group-count"> + 12 more </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="ms-chat-user-container ms-open-chat p-3 media clearfix">
+                        <div class="ms-chat-img mr-3 align-self-center">
+                          <img src="../../assets/assets/img/dashboard/doctor-1.jpg" class="ms-img-round" alt="people">
+                        </div>
+                        <div class="media-body ms-chat-user-info mt-1">
+                          <h6>John Doe</h6>
+                          <a href="#" class="ms-chat-time"> <i class="flaticon-chat"></i> </a>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in arcu turpis. Nunc</p>
+                          <ul class="ms-group-members clearfix mt-3 mb-0">
+                            <li> <img src="../../assets/assets/img/dashboard/doctor-1.jpg" alt="member"> </li>
+                            <li> <img src="../../assets/assets/img/dashboard/doctor-1.jpg" alt="member"> </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li class="ms-chat-user-container ms-open-chat p-3 media clearfix">
+                        <div class="ms-chat-img mr-3 align-self-center">
+                          <img src="../../assets/assets/img/dashboard/doctor-1.jpg" class="ms-img-round" alt="people">
+                        </div>
+                        <div class="media-body ms-chat-user-info mt-1">
+                          <h6>John Doe</h6>
+                          <a href="#" class="ms-chat-time"> <i class="flaticon-chat"></i> </a>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in arcu turpis. Nunc</p>
+                          <ul class="ms-group-members clearfix mt-3 mb-0">
+                            <li> <img src="../../assets/assets/img/dashboard/doctor-1.jpg" alt="member"> </li>
+                            <li> <img src="../../assets/assets/img/dashboard/doctor-1.jpg" alt="member"> </li>
+                            <li> <img src="../../assets/assets/img/dashboard/doctor-1.jpg" alt="member"> </li>
+                            <li class="ms-group-count"> + 4 more </li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div role="tabpanel" class="tab-pane fade" id="contacts-2">
+                    <ul class="ms-scrollable">
+                      <li class="ms-chat-user-container ms-open-chat p-3 media clearfix">
+                        <div class="ms-chat-img mr-3 align-self-center">
+                          <img src="../../assets/assets/img/dashboard/doctor-1.jpg" class="ms-img-round" alt="people">
+                        </div>
+                        <div class="media-body ms-chat-user-info mt-1">
+                          <h6>John Doe</h6>
+                          <a href="#" class="ms-chat-time"> <i class="flaticon-chat"></i> </a>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in arcu turpis. Nunc</p>
+                        </div>
+                      </li>
+                      <li class="ms-chat-user-container ms-open-chat p-3 media clearfix">
+                        <div class="ms-chat-img mr-3 align-self-center">
+                          <img src="../../assets/assets/img/dashboard/doctor-1.jpg" class="ms-img-round" alt="people">
+                        </div>
+                        <div class="media-body ms-chat-user-info mt-1">
+                          <h6>John Doe</h6>
+                          <a href="#" class="ms-chat-time"> <i class="flaticon-chat"></i> </a>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in arcu turpis. Nunc</p>
+                        </div>
+                      </li>
+                      <li class="ms-chat-user-container ms-open-chat p-3 media clearfix">
+                        <div class="ms-chat-img mr-3 align-self-center">
+                          <img src="../../assets/assets/img/dashboard/doctor-1.jpg" class="ms-img-round" alt="people">
+                        </div>
+                        <div class="media-body ms-chat-user-info mt-1">
+                          <h6>John Doe</h6>
+                          <a href="#" class="ms-chat-time"> <i class="flaticon-chat"></i> </a>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in arcu turpis. Nunc</p>
+                        </div>
+                      </li>
+                      <li class="ms-chat-user-container ms-open-chat p-3 media clearfix">
+                        <div class="ms-chat-img mr-3 align-self-center">
+                          <img src="../../assets/assets/img/dashboard/doctor-1.jpg" class="ms-img-round" alt="people">
+                        </div>
+                        <div class="media-body ms-chat-user-info mt-1">
+                          <h6>John Doe</h6>
+                          <a href="#" class="ms-chat-time"> <i class="flaticon-chat"></i> </a>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in arcu turpis. Nunc</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Followers Widget -->
+      <div class="col-xl-5 col-md-12">
+        <div class="ms-panel ms-panel-fh ms-widget">
+          <div class="ms-panel-header">
+            <h6>Active/Inactive Doctors</h6>
+          </div>
+          <div class="ms-panel-body p-0">
+            <ul class="ms-followers ms-list ms-scrollable">
+              <li class="ms-list-item media">
+                <img src="../../assets/assets/img/dashboard/doctor-3.jpg" class="ms-img-small ms-img-round" alt="people">
+                <div class="media-body mt-1">
+                  <h4>James Zathila</h4>
+                  <span class="fs-12">Gynaecologist</span>
+                </div>
+                <button type="button" class="ms-btn-icon btn-info" name="button"><i class="material-icons">person_add</i> </button>
+              </li>
+              <li class="ms-list-item media">
+                <img src="../../assets/assets/img/dashboard/doctor-4.jpg" class="ms-img-small ms-img-round" alt="people">
+                <div class="media-body mt-1">
+                  <h4>John Doe</h4>
+                  <span class="fs-12">Radiotherapist</span>
+                </div>
+                <button type="button" class="ms-btn-icon btn-success" name="button"><i class="material-icons">check</i> </button>
+              </li>
+              <li class="ms-list-item media">
+                <img src="../../assets/assets/img/dashboard/doctor-5.jpg" class="ms-img-small ms-img-round" alt="people">
+                <div class="media-body mt-1">
+                  <h4>Khadiza Rehna</h4>
+                  <span class="fs-12"> General Surgeon </span>
+                </div>
+                <button type="button" class="ms-btn-icon btn-info" name="button"><i class="material-icons">person_add</i> </button>
+              </li>
+              <li class="ms-list-item media">
+                <img src="../../assets/assets/img/dashboard/doctor-1.jpg" class="ms-img-small ms-img-round" alt="people">
+                <div class="media-body mt-1">
+                  <h4>Peter Amber</h4>
+                  <span class="fs-12">Orthopedic</span>
+                </div>
+                <button type="button" class="ms-btn-icon btn-success" name="button"><i class="material-icons">check</i> </button>
+              </li>
+              <li class="ms-list-item media">
+                <img src="../../assets/assets/img/dashboard/doctor-4.jpg" class="ms-img-small ms-img-round" alt="people">
+                <div class="media-body mt-1">
+                  <h4>Helen Southern</h4>
+                  <span class="fs-12"> Heart Surgeon</span>
+                </div>
+                <button type="button" class="ms-btn-icon btn-success" name="button"><i class="material-icons">check</i> </button>
+              </li>
+              <li class="ms-list-item media">
+                <img src="../../assets/assets/img/dashboard/doctor-4.jpg" class="ms-img-small ms-img-round" alt="people">
+                <div class="media-body mt-1">
+                  <h4>Jordan</h4>
+                  <span class="fs-12"> Heart Surgeon</span>
+                </div>
+                <button type="button" class="ms-btn-icon btn-info" name="button"><i class="material-icons">person_add</i> </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

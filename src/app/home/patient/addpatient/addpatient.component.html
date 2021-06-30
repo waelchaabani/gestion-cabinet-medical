@@ -1,0 +1,105 @@
+<div class="ms-content-wrapper">
+   <div class="row">
+      <div class="col-md-12">
+         <nav aria-label="breadcrumb">
+            <ol class="breadcrumb pl-0">
+               <li class="breadcrumb-item"><a href="#"><i class="material-icons">home</i> Home</a></li>
+               <li class="breadcrumb-item"><a href="#">Patient</a></li>
+               <li class="breadcrumb-item active" aria-current="page">Add Patient</li>
+            </ol>
+         </nav>
+      </div>
+      <div class="col-xl-12 col-md-12">
+         <div class="ms-panel">
+            <div class="ms-panel-header ms-panel-custome">
+               <h6>Add Patient</h6>
+               <a href="patient-list.html" class="ms-text-primary">Patient List
+               </a>
+            </div>
+            <div class="ms-panel-body">
+               <form class="needs-validation" novalidate>
+                  <div class="form-row">
+                     <div class="col-md-6 mb-3">
+                        <label for="validationCustom001">first Name</label>
+                        <div class="input-group">
+                           <input type="text" class="form-control" name="firstname" [(ngModel)]="patient.firstname"  placeholder="Enter First Name"  >
+
+                        </div>
+                     </div>
+                     <div class="col-md-6 mb-3">
+                        <label for="validationCustom002">Last name</label>
+                        <div class="input-group">
+                           <input type="text" class="form-control" name="lastname"  [(ngModel)]="patient.Lastname"   placeholder="Enter Last Name">
+
+                        </div>
+                     </div>
+                  </div>
+                  <div class="form-row">
+                   <div class="col-md-6 mb-3">
+                      <label for="validationCustom005">Email</label>
+                      <div class="input-group">
+                         <input type="email" class="form-control" name="email" [(ngModel)]="patient.email"   placeholder="Add Email Id"  >
+
+                      </div>
+                   </div>
+                   <div class="col-md-6 mb-3">
+                       <label>Date of Birth</label>
+                       <div class="input-group">
+                          <input type="date" class="form-control" name="date" [(ngModel)]="patient.DateofBirth"   placeholder="Date of Birth" >
+
+                       </div>
+                    </div>
+                </div>
+                <div class="form-row">
+
+                   <div class="col-md-6 mb-3">
+                       <select class="form-control input-height" [(ngModel)]="patient.sexegender" name="gender">
+                           <option value="">sex</option>
+                           <option value="Male">Male</option>
+                           <option value="Female">Female</option>
+                       </select>
+                   </div>
+                   <div class="col-md-6 mb-2">
+                      <label>Age</label>
+                      <div class="input-group">
+                         <textarea class="form-control" name="age"  [(ngModel)]="patient.age" id="exampleTextarea" rows="3"></textarea>
+
+                      </div>
+                   </div>
+                   <div class="col-md-6 mb-2">
+                      <label>Address</label>
+                      <div class="input-group">
+                         <textarea class="form-control" name="address" [(ngModel)]="patient.address" ></textarea>
+                      </div>
+                   </div>
+                   <div class="col-md-6 mb-2">
+                       <label>phone</label>
+                       <div class="input-group">
+                          <textarea class="form-control" name="number"  [(ngModel)]="patient.phone"  ></textarea>
+                       </div>
+                    </div>
+                </div>
+                  <div class="form-row">
+                     <div class="col-md-6 mb-3">
+                        <label>Patient Image</label>
+                        <div class="custom-file">
+                           <input type="file" (change)="upload($event)" class="custom-file-input" id="validatedCustomFile" >
+                           <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+
+                        </div>
+                     </div>
+                    
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <select class="form-control input-height" [(ngModel)]="patient.medecin" name="gender">
+                        <option [value]="item._id" *ngFor="let item of medecin">{{item.firstname}}</option>
+                    </select>
+                </div>
+                  <button (click)="addPatient()" class="btn btn-primary mt-4 d-inline w-20" type="submit">ADD patient</button>
+               </form>
+
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

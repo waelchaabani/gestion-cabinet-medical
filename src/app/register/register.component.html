@@ -1,0 +1,85 @@
+<div class="ms-content-wrapper ms-auth">
+    <div class="ms-auth-container">
+       <div class="ms-auth-col">
+          <div class="ms-auth-bg"></div>
+       </div>
+       <div class="ms-auth-col">
+          <div class="ms-auth-form">
+             <form class="needs-validation" novalidate="">
+                <h1>create account</h1>
+                <p>Please enter personal information to continue
+               </p>
+                <div class="form-row">
+                   <div class="col-md-12 ">
+                      <label for="validationCustom01"> prenom</label>
+                      <div class="input-group">
+                         <input type="text" name="name"class="form-control" [(ngModel)]="user.name"  placeholder="prenom" >
+                         <div class="valid-feedback">
+                            Looks good!
+                         </div>
+                      </div>
+                   </div>
+                   <div class="col-md-6 ">
+                      <label for="validationCustom02">age</label>
+                      <div class="input-group">
+                         <input type="number" name="age" class="form-control" [(ngModel)]="user.age"  placeholder="age" value="Doe" required="">
+                         <div class="valid-feedback">
+                            Looks good!
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="form-row">
+                   <div class="col-md-12 ">
+                      <label for="validationCustom03">email </label>
+                      <div class="input-group">
+                         <input type="email" name="email" class="form-control" [(ngModel)]="user.email"  placeholder="Email Address" required="">
+                         <div class="invalid-feedback">
+                            Please provide a valid email.
+                         </div>
+                      </div>
+                   </div>
+                   <div class="col-md-12 ">
+                      <label for="validationCustom04">mot de passe</label>
+                      <div class="input-group">
+                         <input type="password" name="password" class="form-control"[(ngModel)]="user.password"  placeholder="mot de passe" required="">
+                         <div class="invalid-feedback">
+                            Please provide a password.
+                         </div>
+                      </div>
+                      
+                   </div>
+                   <div class="col-md-12 ">
+                    <label for="validationCustom04"> numero de telephone</label>
+                    <div class="input-group">
+                       <input type="number" name="phone" class="form-control"[(ngModel)]="user.phone"  placeholder="numero de telephone" required="">
+                      
+                    </div>
+                    <div class="col-md-6 mb-3"> nom de  medecin
+                     <select class="form-control input-height" [(ngModel)]="user.medecin" name="gender">
+                         <option [value]="item._id" *ngFor="let item of medecin">{{item.firstname}}</option>
+                     </select>
+                 </div>
+                 </div>
+                </div>
+                <div class="form-group">
+                   <div class="form-check pl-0">
+                      <label class="ms-checkbox-wrap">
+                      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required="">
+                      <i class="ms-checkbox-check"></i>
+                      </label>
+                      <span> accept the terms and conditions
+                     </span>
+                   </div>
+                </div>
+                <button (click)="register()" class="btn btn-primary mt-4 d-block w-100" type="submit">Create an account
+               </button>
+                
+                <p class="mb-0 mt-3 text-center">Already have an account?
+                  <a class="btn-link" routerLink="/login">connect
+                  </a> </p>
+             </form>
+          </div>
+       </div>
+    </div>
+ </div>

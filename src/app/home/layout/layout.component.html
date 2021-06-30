@@ -1,0 +1,364 @@
+<div class="row">
+  <!-- Notifications Widgets -->
+
+  <div class="col-xl-3 col-md-6 col-sm-6">
+    
+      <div class="ms-card card-gradient-custom ms-widget ms-infographics-widget ms-p-relative">
+        <div class="ms-card-body media">
+          <div class="media-body">
+            <h6>Doctors</h6>
+            <p class="ms-card-change"> {{medecin.length}}</p>
+          </div>
+        </div>
+        <i class="fas fa-stethoscope ms-icon-mr"></i>
+      </div>
+    
+  </div>
+  <div class="col-xl-3 col-md-6 col-sm-6">
+   
+      <div class="ms-card card-gradient-custom ms-widget ms-infographics-widget ms-p-relative">
+        <div class="ms-card-body media">
+          <div class="media-body">
+            <h6>Appointment</h6>
+            <p class="ms-card-change"> {{RDV.length}}</p>
+          </div>
+        </div>
+        <i class="fas fa-user-plus ms-icon-mr"></i>
+      </div>
+    
+  </div>
+  <div class="col-xl-3 col-md-6 col-sm-6">
+   
+      <div class="ms-card card-gradient-custom ms-widget ms-infographics-widget ms-p-relative">
+        <div class="ms-card-body media">
+          <div class="media-body">
+            <h6 class="bold">Patients</h6>
+            <p class="ms-card-change">{{patients.length}}</p>
+          </div>
+        </div>
+        <i class="fa fa-wheelchair ms-icon-mr"></i>
+      </div>
+    
+  </div>
+  <div class="col-xl-3 col-md-6 col-sm-6">
+    
+      <div class="ms-card card-gradient-custom ms-widget ms-infographics-widget ms-p-relative">
+        <div class="ms-card-body media">
+          <div class="media-body">
+            <h6 class="bold">Payement</h6>
+            <p class="ms-card-change"> {{payments.length}}</p>
+          </div>
+        </div>
+        <i class="fas fa-briefcase-medical ms-icon-mr"></i>
+      </div>
+    
+  </div>
+
+
+  <div class="col-xl-4 col-lg-6 col-md-12">
+    <div class="ms-card ms-widget has-graph-full-width ms-infographics-widget">
+      <div class="ms-card-body media">
+        <div class="media-body">
+          <h6 class="bold">Appointments</h6>
+          <h3><strong>{{RDV.length}}</strong></h3>
+        </div>
+      </div>
+      <canvas id="line-chart-2"></canvas>
+    </div>
+
+    <div class="ms-card ms-widget has-graph-full-width ms-infographics-widget">
+      <div class="ms-card-body media">
+        <div class="media-body">
+          <h6>New Patients</h6>
+          <h3><strong>{{patients.length}}</strong></h3>
+        </div>
+      </div>
+      <canvas id="line-chart-3"></canvas>
+    </div>
+
+    <div class="ms-card ms-widget has-graph-full-width ms-infographics-widget">
+      <div class="ms-card-body media">
+        <div class="media-body">
+          <h6 class="bold">payments</h6>
+          <h3><strong>{{payments.length}}</strong></h3>
+        </div>
+      </div>
+      <canvas id="line-chart-4"></canvas>
+    </div>
+
+  </div>
+  
+
+ 
+  <div class="col-xl-4 col-lg-4 ">
+    <div class="ms-card ms-widget has-graph-full-width ms-infographics-widget">
+      <div class="ms-card-body media">
+        <div class="media-body">
+          <div class="col-md-12">
+            <div class="ms-panel ms-panel-fh">
+              <div class="ms-panel-body calendar-wedgit">
+                <div id="calendar"><div class="header"><h1>June 2020</h1><div class="right"></div><div class="left"></div></div><div class="month new"><div class="week"><div class="day other"><div class="day-name">Sun</div><div class="day-number">31</div><div class="day-events"></div></div><div class="day"><div class="day-name">Mon</div><div class="day-number">01</div><div class="day-events"></div></div><div class="day"><div class="day-name">Tue</div><div class="day-number">02</div><div class="day-events"><span class="blue"></span></div></div><div class="day today"><div class="day-name">Wed</div><div class="day-number">03</div><div class="day-events"><span class="orange"></span></div></div><div class="day"><div class="day-name">Thu</div><div class="day-number">04</div><div class="day-events"></div></div><div class="day"><div class="day-name">Fri</div><div class="day-number">05</div><div class="day-events"></div></div><div class="day"><div class="day-name">Sat</div><div class="day-number">06</div><div class="day-events"></div></div><div class="details in"><div class="arrow" style="left: 176px;"></div><div class="events in"><div class="event"><div class="event-category orange"></div><span>Dr.June Appointment</span></div></div></div></div><div class="week"><div class="day"><div class="day-name">Sun</div><div class="day-number">07</div><div class="day-events"></div></div><div class="day"><div class="day-name">Mon</div><div class="day-number">08</div><div class="day-events"></div></div><div class="day"><div class="day-name">Tue</div><div class="day-number">09</div><div class="day-events"></div></div><div class="day"><div class="day-name">Wed</div><div class="day-number">10</div><div class="day-events"></div></div><div class="day"><div class="day-name">Thu</div><div class="day-number">11</div><div class="day-events"><span class="orange"></span></div></div><div class="day"><div class="day-name">Fri</div><div class="day-number">12</div><div class="day-events"></div></div><div class="day"><div class="day-name">Sat</div><div class="day-number">13</div><div class="day-events"><span class="blue"></span></div></div></div><div class="week"><div class="day"><div class="day-name">Sun</div><div class="day-number">14</div><div class="day-events"></div></div><div class="day"><div class="day-name">Mon</div><div class="day-number">15</div><div class="day-events"></div></div><div class="day"><div class="day-name">Tue</div><div class="day-number">16</div><div class="day-events"><span class="orange"></span></div></div><div class="day"><div class="day-name">Wed</div><div class="day-number">17</div><div class="day-events"></div></div><div class="day"><div class="day-name">Thu</div><div class="day-number">18</div><div class="day-events"></div></div><div class="day"><div class="day-name">Fri</div><div class="day-number">19</div><div class="day-events"><span class="orange"></span><span class="orange"></span></div></div><div class="day"><div class="day-name">Sat</div><div class="day-number">20</div><div class="day-events"><span class="blue"></span></div></div></div><div class="week"><div class="day"><div class="day-name">Sun</div><div class="day-number">21</div><div class="day-events"><span class="orange"></span><span class="orange"></span></div></div><div class="day"><div class="day-name">Mon</div><div class="day-number">22</div><div class="day-events"></div></div><div class="day"><div class="day-name">Tue</div><div class="day-number">23</div><div class="day-events"><span class="blue"></span></div></div><div class="day"><div class="day-name">Wed</div><div class="day-number">24</div><div class="day-events"></div></div><div class="day"><div class="day-name">Thu</div><div class="day-number">25</div><div class="day-events"></div></div><div class="day"><div class="day-name">Fri</div><div class="day-number">26</div><div class="day-events"><span class="orange"></span></div></div><div class="day"><div class="day-name">Sat</div><div class="day-number">27</div><div class="day-events"></div></div></div><div class="week"><div class="day"><div class="day-name">Sun</div><div class="day-number">28</div><div class="day-events"></div></div><div class="day"><div class="day-name">Mon</div><div class="day-number">29</div><div class="day-events"></div></div><div class="day"><div class="day-name">Tue</div><div class="day-number">30</div><div class="day-events"></div></div><div class="day other"><div class="day-name">Wed</div><div class="day-number">01</div><div class="day-events"></div></div><div class="day other"><div class="day-name">Thu</div><div class="day-number">02</div><div class="day-events"></div></div><div class="day other"><div class="day-name">Fri</div><div class="day-number">03</div><div class="day-events"></div></div><div class="day other"><div class="day-name">Sat</div><div class="day-number">04</div><div class="day-events"></div></div></div></div><div class="legend"><span class="entry orange">Work</span><span class="entry blue">Work</span></div></div>
+              </div>
+  
+            </div>
+          </div>
+  
+        </div>
+      </div>
+      <canvas id="line-chart-3"></canvas>
+    </div>
+
+  </div>
+  
+  
+  <div class="col-xl-4 col-lg-4 ">
+    <div class="ms-card ms-widget has-graph-full-width ms-infographics-widget">
+      <div class="ms-card-body media">
+        <div class="media-body">
+          <div class="ms-card ms-widget ms-profile-widget ms-card-fh br-0" >
+            <div class="ms-card-img">
+              <img src="assets/assets/img/portfolio/gallery-4-760x260.jpg" alt="card_img">
+            </div>
+            <img src="assets/assets/img/dashboard/doctor-1.jpg" class="ms-img-large ms-img-round ms-user-img" alt="people">
+            <div class="ms-card-body">
+              <h2></h2>
+              <span>Doctor</span>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in arcu turpis. Nunc</p>
+              <button type="button" class="btn btn-primary btn-sm" name="button"><i class="material-icons">person_add</i> Assign</button>
+              <ul class="ms-profile-stats">
+                <li>
+                  <h3 class="ms-count">5790</h3>
+                  <span>Operations</span>
+                </li>
+                <li>
+                  <h3 class="ms-count">4.8</h3>
+                  <span>Medical Rating</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <canvas id="line-chart-3"></canvas>
+    </div>
+
+  </div>
+  
+ 
+ 
+
+
+
+
+ 
+  <div class="col-xl-8 col-md-12">
+    <div class="ms-panel">
+      <div class="ms-panel-header">
+        <h6>Upcoming Appointments</h6>
+      </div>
+      <div class="ms-panel-body">
+        <div class="table-responsive">
+          <table class="table table-hover thead-primary">
+            <thead>
+              <tr>
+                <th scope="col"> Name Patient</th>
+                <th scope="col">Email</th>
+                <th scope="col">Doctor</th>
+                <th scope="col">Num RDV</th>
+                <th scope="col">Date RDV</th>
+                <th scope="col">HeureRDV</th>
+                <th scope="col">phone</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of RDV">
+                <td class="ms-table-f-w"> <img src="assets/assets/img/dashboard/patient-1.jpg" alt="people">{{item.name}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.nameofdoctor}}</td>
+                <td>{{item.numRDV}}</td>
+                <td>{{item.DateRDV|date}}</td>
+                <td>{{item.HeureRDV}}</td>
+                <td>{{item.phone}}</td>
+                <td><label class="ms-switch">
+                    <input type="checkbox" checked="">
+                    <span class="ms-switch-slider ms-switch-success round"></span>
+                  </label>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-4 col-md-12">
+    <div class="ms-panel ms-panel-fh ms-widget">
+      <div class="ms-panel-header ms-panel-custome">
+        <h6>Doctors List</h6>
+      </div>
+      <div class="ms-panel-body p-0"  *ngFor="let item of medecin">
+        <ul class="ms-followers ms-list ms-scrollable">
+          <li class="ms-list-item media">
+            <img src="assets/assets/img/dashboard/doctor-1.jpg" class="ms-img-small ms-img-round" alt="people">
+            <div class="media-body mt-1">
+              <h4>{{item.firstname}}</h4>
+              <span class="fs-12">MBBS, MD</span>
+            </div>
+            <button type="button" class="ms-btn-icon btn-success" name="button"><i class="material-icons">check</i> </button>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+ 
+  <div class="col-lg-12">
+    <div class="ms-panel ms-panel-fh">
+      <div class="ms-panel-header">
+        <h6>Patient Timeline</h6>
+      </div>
+      <div class="ms-panel-body">
+        <ul class="ms-activity-log">
+          <li>
+            <div class="ms-btn-icon btn-pill icon btn-info">
+              <i class="fa fa-wheelchair"></i>
+            </div>
+            <h6>Patient Admission</h6>
+            <span> <i class="material-icons">event</i>1 January, 2020</span>
+            <p class="fs-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, ula in sodales vehicula....</p>
+          </li>
+          <li>
+            <div class="ms-btn-icon btn-pill icon btn-primary">
+              <i class="fa fa-user-md"></i>
+            </div>
+            <h6>Treatment Starts</h6>
+            <span> <i class="material-icons">event</i>5 January, 2020</span>
+            <p class="fs-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, ula in sodales vehicula....</p>
+          </li>
+          <li>
+            <div class="ms-btn-icon btn-pill icon btn-success">
+              <i class="fa fa-check"></i>
+            </div>
+            <h6>Patient Discharge</h6>
+            <span> <i class="material-icons">event</i>15 March, 2020</span>
+            <p class="fs-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, ula in sodales vehicula....</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-xl-8 col-md-12">
+    <div class="ms-panel">
+      <div class="ms-panel-header">
+        <h6>New Patients</h6>
+      </div>
+      <div class="ms-panel-body">
+        <div class="table-responsive">
+          <table class="table table-hover  thead-primary">
+            <thead>
+              <tr>
+                <th scope="col">Patient</th>
+                <th scope="col">E-mail Id</th>
+                <th scope="col">Contact</th>
+                <th scope="col">Disease</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="ms-table-f-w"> <img src="assets/assets/img/dashboard/patient-3.jpg" alt="people"> Richard </td>
+                <td>Richard288@gmail.com</td>
+                <td>+1-202-555-0875</td>
+                <td>Fever</td>
+              </tr>
+              <tr>
+                <td class="ms-table-f-w"> <img src="assets/assets/img/dashboard/patient-2.jpg" alt="people"> William </td>
+                <td>William434@gmail.com</td>
+                <td>+1-202-534-0112</td>
+                <td>Eye</td>
+              </tr>
+              <tr>
+                <td class="ms-table-f-w"> <img src="assets/assets/img/dashboard/patient-4.jpg" alt="people"> John Doe </td>
+                <td>johndeo652@gmail.com</td>
+                <td>+1-202-182-0132</td>
+                <td>Typhoid</td>
+              </tr>
+              <tr>
+                <td class="ms-table-f-w"> <img src="assets/assets/img/dashboard/patient-5.jpg" alt="people"> Martin </td>
+                <td>Martin876@gmail.com</td>
+                <td>+1-202-998-2341</td>
+                <td>Cancer</td>
+              </tr>
+              <tr>
+                <td class="ms-table-f-w"> <img src="assets/assets/img/dashboard/patient-1.jpg" alt="people"> Robert </td>
+                <td>Robert082@gmail.com</td>
+                <td>+1-202-455-1431</td>
+                <td>Diabetes</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-xl-4 col-md-12">
+    <div class="ms-panel ms-panel-fh ms-widget">
+      <div class="ms-panel-header ms-panel-custome">
+        <h6>Latest Reports</h6>
+      </div>
+      <div class="ms-panel-body p-0">
+        <ul class="ms-followers ms-list ms-scrollable">
+          <li class="ms-list-item media">
+
+            <div class="media-body mt-1">
+              <h4>Ultrasound-2.pdf</h4>
+              <a href="#"><span class="fs-12">View Report</span></a>
+            </div>
+            <button type="button" class="btn btn-success btn-sm" name="button">Download </button>
+          </li>
+          <li class="ms-list-item media">
+
+            <div class="media-body mt-1">
+              <h4>Hypothermia.pdf</h4>
+              <a href="#"><span class="fs-12">View Report</span></a>
+            </div>
+            <button type="button" class="btn btn-danger btn-sm" name="button">On Hold </button>
+          </li>
+          <li class="ms-list-item media">
+
+            <div class="media-body mt-1">
+              <h4>Ultrasound.pdf</h4>
+              <a href="#"><span class="fs-12">View Report</span></a>
+            </div>
+            <button type="button" class="btn btn-success btn-sm" name="button">Download </button>
+          </li>
+          <li class="ms-list-item media">
+
+            <div class="media-body mt-1">
+              <h4>Heart-ECG.pdf</h4>
+              <a href="#"><span class="fs-12">View Report</span></a>
+            </div>
+            <button type="button" class="btn btn-success btn-sm" name="button">Download</button>
+          </li>
+          <li class="ms-list-item media">
+
+            <div class="media-body mt-1">
+              <h4>X-ray.pdf</h4>
+              <a href="#"><span class="fs-12">View Report</span></a>
+            </div>
+            <button type="button" class="btn btn-danger btn-sm" name="button">On Hold </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+</div>
+

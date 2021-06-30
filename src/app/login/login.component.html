@@ -1,0 +1,92 @@
+<main class="body-content">
+   <!-- Navigation Bar -->
+   <nav class="navbar ms-navbar">
+      <div class="ms-aside-toggler ms-toggler pl-0" data-target="#ms-side-nav" data-toggle="slideLeft">
+         <span class="ms-toggler-bar bg-white"></span>
+         <span class="ms-toggler-bar bg-white"></span>
+         <span class="ms-toggler-bar bg-white"></span>
+      </div>
+     
+      <ul class="ms-nav-list ms-inline mb-0" id="ms-nav-options">
+        
+         <li class="ms-nav-item">
+            <a routerLink="/loginmedecin" class="btn btn-primary mt-0"> 
+               Log as Medecin</a>
+
+         </li>
+      </ul>
+     
+   </nav>
+   <!-- Body Content Wrapper -->
+   <div class="ms-content-wrapper ms-auth">
+      <div class="ms-auth-container">
+         <div class="ms-auth-col">
+            <div class="ms-auth-bg"></div>
+         </div>
+         <div class="ms-auth-col">
+            <div class="ms-auth-form">
+               <form class="needs-validation" novalidate="">
+                  <h1>
+               secrétaire</h1>
+                     <h2>
+                       Log into account</h2>
+                     
+                  <p>Please enter your email and password to continue</p>
+                  <div class="mb-3">
+                     <label for="validationCustom08">email address
+                     </label>
+                     <div class="input-group">
+                        <input type="email" name="email" [(ngModel)]= "email" class="form-control"  placeholder="Email Address" required="">
+                        <div class="invalid-feedback">
+                           enter another email                        </div>
+                     </div>
+                  </div>
+                  <div class="mb-2">
+                     <label for="validationCustom09">password</label>
+                     <div class="input-group">
+                        <input type="password" name="password" [(ngModel)]= "password" class="form-control"  placeholder="Password" required="">
+                        <div class="invalid-feedback">
+                           enter password
+
+                        </div>
+                     </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="ms-checkbox-wrap">
+                     <input class="form-check-input" type="checkbox" value="">
+                     <i class="ms-checkbox-check"></i>
+                     </label>
+                     <span> Remember password
+                     </span>
+                     <label class="d-block mt-3"><a href="#" class="btn-link" data-toggle="modal" data-target="#modal-12">mot de passe oublié?</a></label>
+                  </div>
+                  <button (click)="login()" class="btn btn-primary mt-4 d-block w-100" type="submit">Sign In</button>
+                  <p class="mb-0 mt-3 text-center">You do not have an account?
+                     <a class="btn-link" routerLink="/register">Créer un compte</a> </p>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- Forgot Password Modal -->
+   <div class="modal fade" id="modal-12" tabindex="-1" role="dialog" aria-labelledby="modal-12">
+      <div class="modal-dialog modal-dialog-centered modal-min" role="document">
+         <div class="modal-content">
+            <div class="modal-body text-center">
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+               <i class="flaticon-secure-shield d-block"></i>
+               <h1>Forgot your password?
+               </h1>
+               <p> Enter your email to recover your password </p>
+               <form method="post">
+                  <div class="ms-form-group has-icon">
+                     <input type="text" placeholder="Email Address" class="form-control" name="forgot-password" value="">
+                     <i class="material-icons">email</i>
+                  </div>
+                  <button type="submit" class="btn btn-primary shadow-none">Reset Password</button>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+</main>

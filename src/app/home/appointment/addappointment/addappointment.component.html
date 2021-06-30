@@ -1,0 +1,91 @@
+<div class="ms-content-wrapper">
+  <div class="row">
+    <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb pl-0">
+          <li class="breadcrumb-item"><a href="#"><i class="material-icons">home</i> Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Appointment</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Add Appointment</li>
+        </ol>
+      </nav>
+    </div>
+    <div class="col-xl-12 col-md-12">
+      <div class="ms-panel">
+        <div class="ms-panel-header ms-panel-custome">
+          <h6>Add Appointment</h6>
+          <a href="appointment-list.html" class="ms-text-primary">Appointment List</a>
+        </div>
+        <div class="ms-panel-body">
+          <form class="needs-validation" novalidate>
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label for="validationCustom001"> Name</label>
+                <div class="input-group">
+                  <input type="text"  name="name" class="form-control" [(ngModel)]="rdv.name"  placeholder="Enter First Name" required>
+
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="validationCustom002">email</label>
+                <div class="input-group">
+                  <input type="email" name="email" class="form-control" [(ngModel)]="rdv.email"  placeholder="Enter Last Name" required>
+
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label for="validationCustom003">name of doctor</label>
+                <div class="input-group">
+                  <input type="text" name="nameofdoctor" class="form-control" [(ngModel)]="rdv.nameofdoctor" placeholder="Enter Email" required>
+
+                </div>
+              </div>
+              <div class="col-md-6 mb-2">
+                <label for="validationCustom004">numRDV</label>
+                <div class="input-group">
+                  <input type="number" name="numrdv" class="form-control" [(ngModel)]="rdv.numRDV"  placeholder="Enter Password" required>
+
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label for="validationCustom005">DateRDV</label>
+                <div class="input-group">
+                  <input type="date" name="daterdv" class="form-control" [(ngModel)]="rdv.DateRDV" placeholder="Enter Id" required>
+
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="validationCustom006">HeureRDV</label>
+                <div class="input-group">
+                  <input type="datetime" name="heurerdv" class="form-control" [(ngModel)]="rdv.HeureRDV" placeholder="Enter Department Name" required>
+
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label for="validationCustom007">phone</label>
+                <div class="input-group">
+                  <input type="number" name="phone" class="form-control" [(ngModel)]="rdv.phone" placeholder="Enter Doctor Name" required>
+
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="validationCustom008">injury</label>
+                <div class="input-group">
+                  <input type="text" name="injury" class="form-control" [(ngModel)]="rdv.injury" placeholder="Enter Appointment Date" required>
+
+                </div>
+              </div>
+            </div>
+            
+            <button (click)="addRDV()" class="btn btn-primary mt-4 d-inline w-20" type="submit">ADD appoinment</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
